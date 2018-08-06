@@ -1091,6 +1091,14 @@ class Camera2 extends CameraViewImpl implements MediaRecorder.OnInfoListener, Me
             mMediaRecorder.setMaxFileSize(maxFileSize);
         }
 
+        /**
+         * Setting bitrate to allow small file sizes.
+         */
+
+        mMediaRecorder.setVideoFrameRate(20);
+        mMediaRecorder.setVideoEncodingBitRate(600 * 1000);
+        mMediaRecorder.setAudioEncodingBitRate(32 * 1000); 
+
         mMediaRecorder.setOnInfoListener(this);
         mMediaRecorder.setOnErrorListener(this);
     }
